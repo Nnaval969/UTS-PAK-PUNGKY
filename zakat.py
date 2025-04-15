@@ -1,6 +1,13 @@
-import pandas as pd
-import pymysql
-from tabulate import tabulate
+try:
+    import pandas as pd
+    import pymysql
+    from tabulate import tabulate
+except ImportError as e:
+    print("\nERROR: Modul yang diperlukan tidak ditemukan!")
+    print(f"Detail error: {e}")
+    print("\nSilakan install modul yang diperlukan dengan perintah berikut:")
+    print("\nJika menggunakan Python 3.x, coba: python3 -m pip install nama_modul")
+    exit(1)
 from datetime import datetime
 
 class DatabaseZakat:
